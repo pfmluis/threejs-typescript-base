@@ -4,7 +4,7 @@
   "description": "Typescript-based project for ThreeJS",
   "main": "index.js",
   "scripts": {
-    "start": ""
+    "start": "parcel app/index.html --port 8080 --open"
   },
   "repository": {
     "type": "git",
@@ -16,12 +16,14 @@
     "url": "https://github.com/pfmluis/threejs-typescript-base/issues"
   },
   "homepage": "https://github.com/pfmluis/threejs-typescript-base#readme",
-  "dependencies": {
-    "parcel-bundler": "1.12.4"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
-    "eslint": "^7.16.0"
-  }
+    "@typescript-eslint/eslint-plugin": "4.11.0",
+    "@typescript-eslint/parser": "4.11.0",
+    "eslint": "7.16.0",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-asset-copier": "1.1.0",
+    "typescript": "4.1.3"
+  },
+  "assetsPath": "app/src/assets"
 }
