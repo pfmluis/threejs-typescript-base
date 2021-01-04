@@ -12,6 +12,10 @@ export class PerspectiveCameraRatioHelper {
     });
   }
 
+  public static getAspectRatio(): number {
+    return window.innerWidth / window.innerHeight;
+  }
+
   private static resizeRenderer(renderer: Renderer): void {
     renderer.setSize(window.innerWidth, window.innerHeight);
   }

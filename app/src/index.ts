@@ -1,5 +1,4 @@
-import { 
-  BoxGeometry,
+import {
   Camera,
   DirectionalLight,
   Light,
@@ -8,13 +7,16 @@ import {
   PerspectiveCamera,
   Renderer,
   Scene,
+  SphereGeometry,
   WebGLRenderer
 } from 'three';
+import { PerspectiveCameraSingleton } from './core/camera-singleton';
+import { SceneSingleton } from './core/scene-singleton';
 import './helpers/ratio.helper';
 import { PerspectiveCameraRatioHelper } from './helpers/ratio.helper';
 
-const scene: Scene = new Scene();
-const camera: Camera = new PerspectiveCamera(75, window.innerWidth/window.innerHeight, .1, 10);
+const scene: Scene = SceneSingleton.getInstance();
+const camera: Camera = PerspectiveCameraSingleton.getInstance();
 const renderer: Renderer = new WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -28,7 +30,7 @@ light.position.set(0, 3, 2);
 light.lookAt(0, 0, 0);
 scene.add(light);
 
-const cubeGeometry = new BoxGeometry(1, 1, 1);
+const cubeGeometry = new SphereGeometry(1, 100, 100);
 const cubeMaterial = new MeshPhongMaterial({ color: 0xff0000 });
 const cube = new Mesh(cubeGeometry, cubeMaterial);
 scene.add(cube);
